@@ -2,9 +2,7 @@
 import Container from "./Container.astro"
 import Link from "./Link.astro"
 import Dropdown from "./Dropdown.astro"
-import Astronav from "./astro-nav/Astronav.astro"
-import MenuItems from "./astro-nav/components/MenuItems.astro"
-import MenuIcon from "./astro-nav/components/MenuIcon.astro"
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar"
 
 import { Image } from 'astro:assets';
 import logo from "../assets/logo.png"
@@ -24,7 +22,7 @@ const menuitems = [
   },
   {
     title: "Contacto",
-    path: "/contacto",
+    path: "/contact",
   },
 ];
 ---
