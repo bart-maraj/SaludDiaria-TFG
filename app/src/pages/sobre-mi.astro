@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import Sectionhead from "../components/Sectionhead.astro";
+
+import myself from "../assets/myself.jpeg"
+import { Picture } from "astro:assets";
+import RedesSociales from "../components/RedesSociales.astro";
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Sobre mi</Fragment>
+      <Fragment slot="desc">Ingeniero informático y desarrollador full-stack</Fragment>
+    </Sectionhead>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      <div class="group">
+        <div class="w-full aspect-square">
+          <Picture
+            src={myself}
+            alt='bart'
+            sizes="(max-width: 800px) 100vw, 400px"
+            width={400}
+            height={400}
+            class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+          />
+        </div>
+      </div>
+      <div class="col-span-2 flex flex-col gap-3 mx-auto max-w-4xl">
+        <h2 class="font-bold text-3xl text-gray-800">
+          Persona pro-activa, con ganas de...
+        </h2>
+        <p class="text-lg leading-relaxed text-slate-500">
+          Soy Bartlomiej Maraj, estudiante de Ingeniería Informática en la Universidad de Alcalá y desarrollador full-stack.
+          Me considero una persona pro-activa, con ganas de seguir mejorando y con una gran capacidad de aprendizaje. Mi objetivo es ejercer,
+          aportar y aumentar dichos conocimientos y aptitudes.
+        </p>
+        <RedesSociales  />
+      </div>
+    </div>
+  </Container>
+</Layout>
