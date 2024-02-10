@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+const { title, src, link } = Astro.props
+---
+
+<section>
+    <a
+    href={link}
+    target="_blank"
+    class="relative top-0 block overflow-hidden rounded-2xl"
+    >
+    <figure>
+        <Image
+        alt={title}
+        src={src}
+        class="h-600 w-full object-cover"
+        width={30}
+        height={20}
+        decoding="async"
+        loading="lazy"
+        />
+    </figure>
+    <div class="bg-zinc-900 p-4">
+        <p class="mt-1 text-s text-zinc-400 h-8">{title}</p>
+    </div>
+    </a>
+</section>
