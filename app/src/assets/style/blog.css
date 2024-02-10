@@ -1,0 +1,17 @@
+h2 {
+    font-weight: bold;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+
+p {
+    padding-bottom: 5px;
+    a {
+        color: rgb(107 114 128 / 1);
+    }
+}
+
+img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
