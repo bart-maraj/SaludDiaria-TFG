@@ -7,16 +7,20 @@ import Container from "../components/Container.astro";
 import Sectionhead from "../components/Sectionhead.astro";
 
 const publishedBlogEntries = await getCollection('blog');
+
+publishedBlogEntries.sort(function (a, b) {
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
 ---
 
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Más información</Fragment>
-      <Fragment slot="desc">We write about building startups and thoughts going on our mind.</Fragment>
+      <Fragment slot="title">Blogs</Fragment>
+      <Fragment slot="desc">Disfruta de una selección de los blogs más interesantes de la actualidad del fitness y nutrición</Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <ul class="grid gap-16 max-w-4xl mx-auto pb-5">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
             <li>
