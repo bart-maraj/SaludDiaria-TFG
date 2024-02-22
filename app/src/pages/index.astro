@@ -1,9 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Content from '../components/Content.astro';
+import Sectionhead from "../components/Sectionhead.astro";
+
+const saludFisica = {
+  title: "Aprovecha tu salud física",
+  subtitle: "Salud Física",
+  decription: "Estos son algunos de los beneficios que podras disfrutar gracias a una buena salud.",
+  items: [
+	{
+		title: "Prevención de enfermedades",
+		description: "Una nutrición adecuada y la actividad física regular pueden prevenir enfermedades crónicas como la obesidad, la diabetes tipo 2, enfermedades cardiovasculares y ciertos tipos de cáncer."
+	},
+	{
+		title: "Manejo del peso",
+		description: "Mantener un peso saludable es crucial para prevenir problemas de salud. La actividad física regular, combinada con una nutrición adecuada, ayuda a controlar el peso y reduce el riesgo de obesidad."
+	},
+	{
+		title: "Salud musculoesquelética",
+		description: "Los largos períodos de sedentarismo pueden contribuir a problemas musculoesqueléticos, como dolor de espalda y cuello. Ejercicios específicos, como los de estiramiento y fortalecimiento, pueden aliviar estos síntomas y mejorar la postura."
+	}
+  ],
+  image: "https://scout.es/wp-content/uploads/2022/10/salud-menta-y-atractivo-768x524-1.jpg",
+  color: "#22c2f7"
+}
+
+const saludMental = {
+  title: "Mejora tu Salud Mental",
+  subtitle: "Salud Mental",
+  decription: "La importancia de la salud mental junto a sus beneficios:",
+  items: [
+	{
+		title: "Reducción del estrés y mejora del estado de ánimo",
+		description: "La actividad física regular libera endorfinas, conocidas como las hormonas de la felicidad, que pueden reducir el estrés y mejorar el estado de ánimo."
+	},
+	{
+		title: "Mejora del sueño",
+		description: "Una buena nutrición y ejercicio regular pueden mejorar la calidad del sueño, lo cual es esencial para la recuperación y el bienestar mental."
+	},
+	{
+		title: "Aumento de la energía y la concentración",
+		description: "La nutrición adecuada proporciona los nutrientes necesarios para el cerebro, mejorando la concentración y la productividad. El ejercicio regular también aumenta los niveles de energía, lo que puede mejorar el rendimiento laboral."
+	},
+  ],
+  image: "https://scout.es/wp-content/uploads/2022/10/salud-menta-y-atractivo-768x524-1.jpg",
+  color: "#22f757"
+}
+
+
+const productividad = {
+  title: "Trabaja la Productividad y Eficiencia Organizacional",
+  subtitle: "Productividad y Eficiencia Organizacional",
+  decription: "La importancia de la salud mental junto a sus beneficios:",
+  items: [
+	{
+		title: "Reducción del ausentismo",
+		description: "Los programas de bienestar que incluyen nutrición y ejercicio pueden reducir la tasa de enfermedades y, por lo tanto, el ausentismo laboral."
+	},
+	{
+		title: "Mejora del rendimiento laboral",
+		description: "Empleados saludables y energéticos tienden a ser más productivos y eficientes en sus tareas."
+	},
+	{
+		title: "Cultura laboral positiva",
+		description: "La promoción de estilos de vida saludables puede contribuir a una cultura laboral positiva, mejorando la moral y la satisfacción laboral."
+	},
+  ],
+  image: "https://scout.es/wp-content/uploads/2022/10/salud-menta-y-atractivo-768x524-1.jpg",
+  color: "#f5950f"
+}
 ---
 
 <Layout title="Salud Diaria">
 	<main>
+		<Sectionhead>
+			<Fragment slot="title">Salud Diaria</Fragment>
+			<Fragment slot="desc">Cuida tu salud mental, física y laboral</Fragment>
+		</Sectionhead>
+
+		<div class="relative mx-auto lg:px-30 lg:py-10 md:px-15 md:py-16 py-12 text-default max-w-7xl lg:pt-10 md:pt-10 pt-10 px-10 text-justify">
+			<p class="text-lg text-slate-600">
+				Implementar programas de bienestar que enfaticen la importancia de la nutrición y el ejercicio en entornos laborales sedentarios es una inversión en el capital humano de una organización. Estas iniciativas no solo mejoran la salud y el bienestar de los empleados, sino que también contribuyen a una mayor productividad y éxito organizacional. Utiliza nuestros servicios de salud para acceder a planes nutricionnales y de entrenamientos.
+			</p>
+		</div>
+
+		<div class="lg:px-30 md:px-15 px-10 mt-5 mb-20 flex space-x-20 justify-center">
+			<article class="grid place-items-center">
+				<div class="rounded-lg block overflow-hidden mb-4">
+				  <a href="/nutricion">
+					<figure class="w-auto h-auto md:h-[150px] object-cover">
+					  <img src="https://www.clinicasbe.es/wp-content/uploads/2021/08/plan-nutricional.jpg" class="transition duration-300 ease-in-out hover:scale-110" alt="Plan nutricional personalizado" loading="lazy" width="400" height="400">
+					</figure>
+				  </a>
+				</div>
+				<div class="relative">
+				  <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600">
+					<a href="/nutricion">
+					  <span class="absolute inset-0"></span> Plan Nutricional Personalizado </a>
+				  </h2>
+				</div>
+				<div class="flex items-center text-xs text-zinc-900 text-white pt-5">
+					<a href="/nutricion" class="capitalize text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-white hover:bg-gray-400 bg-gray-900 hover:text-gray-900"> Comenzar </a>
+				</div>
+			</article>
+	
+			<article class="grid place-items-center">
+				<div class="rounded-lg block overflow-hidden mb-4">
+				  <a href="/entrenamientos">
+					<figure class="w-auto h-auto md:h-[150px] object-cover">
+					  <img src="https://guiafitness.com/wp-content/uploads/consejos-plan-entrenamiento-semanal-1200x741.jpg" class="transition duration-300 ease-in-out hover:scale-110" alt="Plan nutricional personalizado" loading="lazy" width="400" height="400">
+					</figure>
+				  </a>
+				</div>
+				<div class="relative">
+				  <h2 class="mt-3 text-xl font-semibold leading-6 text-zinc-900 group-hover:text-zinc-600">
+					<a href="/entrenamientos">
+					  <span class="absolute inset-0"></span> Plan de Entrenamientos Personalizado </a>
+				  </h2>
+				</div>
+				<div class="flex items-center text-xs text-zinc-900 text-white pt-5">
+					<a href="/entrenamientos" class="capitalize text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-white hover:bg-gray-400 bg-gray-900 hover:text-gray-900"> Comenzar </a>
+				</div>
+			</article>
+		</div>
+
+		<Content
+			contenido = {saludFisica}
+		></Content>
 		
+		<Content
+			contenido = {saludMental}
+			reverse = true
+		></Content>
+
+		<Content
+			contenido = {productividad}
+		></Content>
 	</main>
 </Layout>

@@ -20,6 +20,11 @@ const { title } = Astro.props;
 	<body>
 		<Header />
 		<slot />
+		<footer class="mx-auto max-w-screen-lg pt-10 px-4 sm:px-6 lg:px-8"> <div class="border-t border-gray-400"> <p class="text-center text-xs/relaxed text-gray-500 mt-8 mb-8">
+			© 2024. Salud Diaria - All rights REVERSED
+			<span class="block mt-2">
+			Made by
+			<a href="https://www.linkedin.com/in/bartolome-maraj/" class="text-gray-600 decoration-dashed transition hover:text-gray-700">Bartlomiej Maraj</a> </span> </p> </div> </footer>
 		<style is:global>
 			img {
 			  content-visibility: auto;

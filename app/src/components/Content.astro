@@ -1,0 +1,96 @@
+---
+type Item = {
+    title: string,
+    description: string,
+}
+
+type ContentItem = {
+    title: string,
+    subtitle: string,
+    description: string,
+    items: Item[],
+    image: string,
+    color: string
+}
+
+const contenido = Astro.props.contenido as ContentItem;
+const reverse = Astro.props.reverse ?? false;
+
+console.log(contenido)
+---
+
+<div class="text-center md:mx-auto mb-8 md:mb-12 lg:max-w-2xl max-w-xl sm:mx-auto">
+    <p class="font-bold text-base text-secondary tracking-wide uppercase" style={'color: ' + contenido.color}>{contenido.subtitle}</p>
+    <h2 class="font-heading leading-tighter leading-tighter tracking-tighter text-heading mt-1 text-4xl md:text-5xl">{contenido.title}</h2>
+</div>
+<div class="relative mx-auto px-4 lg:py-20 md:px-6 md:py-16 py-12 text-default max-w-7xl lg:pt-0 md:pt-0 pt-0">
+    { !reverse ? (
+        <div class="mx-auto max-w-7xl md:px-8">
+            <div class="md:gap-16 md:flex">
+                <div class="md:basis-1/2 self-center">
+                <div class="mb-12 text-gray-600">{contenido.description}</div>        
+                    {
+                        contenido.items && (
+                            <div class="mx-auto gap-8 grid gap-y-4 md:gap-y-8">
+                            {contenido.items.map(({ title = '', description = '' }) => (
+                                <div>
+                                    <div class="flex flex-row max-w-none">
+                                        <div class="flex justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
+                                                <path fill={contenido.color} d="m11 19.654l-1.156-1.042q-2.28-2.087-3.799-3.593q-1.518-1.506-2.413-2.679q-.895-1.173-1.264-2.146Q2 9.221 2 8.225q0-1.908 1.296-3.201Q4.592 3.731 6.5 3.731q1.32 0 2.475.672q1.156.672 2.025 1.96q.87-1.288 2.025-1.96q1.156-.672 2.475-.672q1.817 0 3.063 1.172q1.245 1.172 1.402 2.878q-.442-.143-.896-.202q-.454-.06-.913-.06q-2.183.02-3.794 1.52q-1.612 1.501-1.612 3.923q0 .988.362 1.976q.361.987 1.1 1.781q-.533.483-1.17 1.069q-.638.585-1.284 1.181zm6.95-4.19l-2.138-2.114l.713-.708l1.425 1.42l3.525-3.545l.713.708z" />
+                                            </svg>
+                                        </div>
+                                        <div class="mt-0.5 text-justify">
+                                            <h3 class="font-medium text-gray-600 leading-6 ml-2 rtl:ml-0 rtl:mr-2 text-lg">{title}</h3>
+                                            <p class="text-muted mt-3 text-gray-600 ml-2 rtl:ml-0 rtl:mr-2">{description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            </div>
+                        )
+                    }
+                </div>
+                <div class="md:basis-1/2 md:mt-0 mt-10 pt-10" aria-hidden="true">
+                    <div class="relative m-auto max-w-4xl">
+                        <img alt="Blueprint Image" height="500" src={contenido.image}>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ) : (
+        <div class="mx-auto max-w-7xl md:px-8 p-4">
+            <div class="md:gap-16 md:flex">
+                <div class="md:basis-1/2 md:mt-0 mt-10 pt-10" aria-hidden="true">
+                    <div class="relative m-auto max-w-4xl">
+                        <img alt="Blueprint Image" height="500" src={contenido.image}>
+                    </div>
+                </div>
+                <div class="md:basis-1/2 self-center">
+                <div class="mb-12 text-gray-600">{contenido.description}</div>        
+                    {
+                        contenido.items && (
+                            <div class="mx-auto gap-8 grid gap-y-4 md:gap-y-8">
+                            {contenido.items.map(({ title = '', description = '' }) => (
+                                <div>
+                                    <div class="flex flex-row max-w-none">
+                                        <div class="flex justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
+                                                <path fill="#22f757" d="m11 19.654l-1.156-1.042q-2.28-2.087-3.799-3.593q-1.518-1.506-2.413-2.679q-.895-1.173-1.264-2.146Q2 9.221 2 8.225q0-1.908 1.296-3.201Q4.592 3.731 6.5 3.731q1.32 0 2.475.672q1.156.672 2.025 1.96q.87-1.288 2.025-1.96q1.156-.672 2.475-.672q1.817 0 3.063 1.172q1.245 1.172 1.402 2.878q-.442-.143-.896-.202q-.454-.06-.913-.06q-2.183.02-3.794 1.52q-1.612 1.501-1.612 3.923q0 .988.362 1.976q.361.987 1.1 1.781q-.533.483-1.17 1.069q-.638.585-1.284 1.181zm6.95-4.19l-2.138-2.114l.713-.708l1.425 1.42l3.525-3.545l.713.708z" />
+                                            </svg>
+                                        </div>
+                                        <div class="mt-0.5 text-justify">
+                                            <h3 class="font-medium text-gray-600 leading-6 ml-2 rtl:ml-0 rtl:mr-2 text-lg">{title}</h3>
+                                            <p class="text-muted mt-3 text-gray-600 ml-2 rtl:ml-0 rtl:mr-2">{description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    )}
+</div>
