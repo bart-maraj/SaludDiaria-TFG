@@ -21,6 +21,10 @@ const menuitems = [
     path: "/blogs",
   },
   {
+    title: "Preguntas frecuentes",
+    path: "/preguntas-frecuentes",
+  },
+  {
     title: "Sobre Mi",
     path: "/sobre-mi",
   },
@@ -72,16 +76,12 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
-        </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        <a href="/iniciar-sesion">Iniciar Sesion</a>
+        <Link href="/registro" size="md">Registrarse</Link>
       </div>
     </div>
   </header>
