@@ -25,7 +25,7 @@ publishedBlogEntries.sort(function (a, b) {
           publishedBlogEntries.map((blogPostEntry, index) => (
             <li>
               <a href={`blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center transition duration-300 ease-in-out hover:scale-105">
                   <Picture
                     src={blogPostEntry.data.image.src}
                     alt={blogPostEntry.data.image.alt}
