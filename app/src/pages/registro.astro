@@ -13,8 +13,9 @@ import Layout from "../layouts/Layout.astro";
         <div class="px-40 py-20">
             <form
                 method="post"
-                action="/api/signup"
+                action="/api/registro"
                 class="needs-validation"
+                enctype="multipart/form-data"
                 novalidate
             >
                 <div class="mb-5">
@@ -26,9 +27,6 @@ import Layout from "../layouts/Layout.astro";
                     name="username"
                     id="username"
                     />
-                    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-                        Por favor introduzca el usuario
-                    </div>
                 </div>
                 <div class="mb-5">
                     <input
@@ -39,14 +37,11 @@ import Layout from "../layouts/Layout.astro";
                     name="password"
                     id="password"
                     />
-                    <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-                        Por favor introduzca la contraseña
-                    </div>
                 </div>
+                <p class="text-red-500 pb-5" id="form-error"></p>
                 <button class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-6 py-3 bg-black text-white hover:bg-slate-900  border-2 border-transparent">
                     Continue
                 </button>
-                <p id="form-error"></p>
             </form>
             <div class="pt-5">
                 <p class="text-lg mt-4 text-slate-600">
