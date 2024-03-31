@@ -1,7 +1,7 @@
-import { lucia } from "../lib/auth";
+import { lucia } from "../../lib/auth";
 import { generateId } from "lucia";
 import { Argon2id } from "oslo/password";
-import { db } from "../lib/db";
+import { db } from "../../lib/db";
 import { SqliteError } from "better-sqlite3";
 
 import type { APIContext } from "astro";
