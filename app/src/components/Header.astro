@@ -79,17 +79,17 @@ const menuitems = [
       </MenuItems>
     </Astronav>
     <div>
-      <div class="hidden lg:flex items-center gap-4">
+      <div class="pt-10 lg:pt-0 lg:flex items-center gap-4">
         {Astro.locals.user ? (
-          <h1>Hi {Astro.locals.user.username}</h1>
-          <form method="post" action="/auth/logout">
+          <div class="flex justify-center items-center pb-4 lg:pb-0 lg:flex gap-2"><p>Bienvenido<p class="font-medium">{Astro.locals.user.username}</p></p></div>
+          <form class="flex justify-center items-center" method="post" action="/auth/logout">
             <button class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-4 py-2 bg-black text-white hover:bg-gray-800  border-2 border-transparent">
               Sign out
             </button>
           </form>
         ) : (
           <>
-            <a href="/login">Iniciar Sesion</a>
+            <a class="pr-2 lg:pr-0" href="/login">Iniciar Sesion</a>
             <Link href="/registro" size="md">Registrarse</Link>
           </>
         )}
