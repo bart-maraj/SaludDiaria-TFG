@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="px-40 py-20">
             <form
                 method="post"
-                action="/api/signup"
+                action="../auth/registro"
                 class="needs-validation"
                 novalidate
             >
@@ -45,3 +45,22 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </Container>
 </Layout>
+
+<script>
+	const errorMessageElement = document.getElementById("form-error")!;
+
+	document.forms[0].addEventListener("submit", async (e) => {
+		e.preventDefault();
+		errorMessageElement.innerText = "";
+		const formElement = e.target as HTMLFormElement;
+		const response = await fetch(formElement.action, {
+			method: formElement.method,
+			body: new FormData(formElement)
+		});
+		if (response.ok) {
+			window.location.href = "/";
+		} else {
+			errorMessageElement.innerText = (await response.json()).error;
+		}
+	});
+</script>
