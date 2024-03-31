@@ -80,9 +80,31 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="/login">Iniciar Sesion</a>
-        <Link href="/registro" size="md">Registrarse</Link>
+        {Astro.locals.user ? (
+          <h1>Hi {Astro.locals.user.username}</h1>
+          <form method="post" action="/auth/logout">
+            <button class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-4 py-2 bg-black text-white hover:bg-gray-800  border-2 border-transparent">
+              Sign out
+            </button>
+          </form>
+        ) : (
+          <>
+            <a href="/login">Iniciar Sesion</a>
+            <Link href="/registro" size="md">Registrarse</Link>
+          </>
+        )}
       </div>
     </div>
+    <script>
+      document.forms[0].addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formElement = e.target as HTMLFormElement;
+        await fetch(formElement.action, {
+          method: formElement.method,
+          body: new FormData(formElement)
+        });
+        window.location.href = "/";
+      });
+    </script>
   </header>
 </Container>
