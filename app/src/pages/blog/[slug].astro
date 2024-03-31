@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import '../../assets/style/blog.css'
 import Layout from "../../layouts/Layout.astro";
 import Container from "../../components/Container.astro";
-
+export const prerender = true;
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
   return blogEntries.map((entry) => ({
